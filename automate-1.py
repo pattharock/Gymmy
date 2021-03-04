@@ -65,6 +65,21 @@ nameInput = WebDriverWait(browser, 60).until(EC.visibility_of_element_located(
 membershipNumberInput = WebDriverWait(browser, 60).until(EC.visibility_of_element_located(
     (By.CSS_SELECTOR, "div:nth-child(4) > div > div > div.freebirdFormviewerComponentsQuestionTextRoot > div > div > div > div > input.quantumWizTextinputPaperinputInput.exportInput")))
 
+gymChoice = "Campus"
+cssSelectorForGymChoice = ""
+if(gymChoice == "Campus"):
+    cssSelectorForGymChoice = "#i19 > div > div.appsMaterialWizToggleRadiogroupOffRadio.exportOuterCircle"
+elif(gymChoice == "QRW"):
+    cssSelectorForGymChoice = "#i25 > div > div.appsMaterialWizToggleRadiogroupOffRadio.exportOuterCircle"
+else:
+    # Stanley Ho Sports Center
+    cssSelectorForGymChoice = "#i22 > div > div.appsMaterialWizToggleRadiogroupOffRadio.exportOuterCircle"
+
+sportsCenterInput = WebDriverWait(browser, 60).until(EC.visibility_of_element_located(
+    (By.CSS_SELECTOR, cssSelectorForGymChoice)))
+
+buttonToPage2 = WebDriverWait(browser, 60).until(EC.visibility_of_element_located(
+    (By.CSS_SELECTOR, "span.appsMaterialWizButtonPaperbuttonContent.exportButtonContent")))
 # .appsMaterialWizButtonEl.appsMaterialWizButtonPaperbuttonEl.appsMaterialWizButtonPaperbuttonProtected.freebirdFormviewerViewNavigationNoSubmitButton.freebirdThemedProtectedButtonM2
 
 
@@ -99,6 +114,24 @@ membershipNumberInput = WebDriverWait(browser, 60).until(EC.visibility_of_elemen
 emailAddressInput.send_keys("u3555304@connect.hku.hk")
 nameInput.send_keys("Ritvik Singh")
 membershipNumberInput.send_keys("3035553044")
+sportsCenterInput.click()
+buttonToPage2.click()
+
+scheduleASession = WebDriverWait(browser, 60).until(EC.visibility_of_element_located(
+    (By.CSS_SELECTOR, "#i9 > div > div.appsMaterialWizToggleRadiogroupOffRadio.exportOuterCircle")))
+
+nextToPage3 = WebDriverWait(browser, 60).until(EC.visibility_of_element_located(
+    (By.CSS_SELECTOR, "div:nth-child(2) > span > span.appsMaterialWizButtonPaperbuttonLabel.quantumWizButtonPaperbuttonLabel.exportLabel")))
+
+scheduleASession.click()
+nextToPage3.click()
+
+timeSlotDropDown = WebDriverWait(browser, 60).until(EC.visibility_of_element_located(
+    (By.CSS_SELECTOR, "div.quantumWizMenuPaperselectOption.appsMaterialWizMenuPaperselectOption.freebirdThemedSelectOptionDarkerDisabled.exportOption.isSelected.isPlaceholder")))
+
+timeSlotDropDown.click()
+
+
 # nameInput.send_keys("Ritvik Singh")
 
 print(" ========= OPTION 1 ========= ")
