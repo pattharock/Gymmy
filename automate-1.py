@@ -4,8 +4,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 
-import time
-
 # option = webdriver.ChromeOptions()
 # option.add_argument("-incognito")
 
@@ -57,8 +55,15 @@ browser.get('https://docs.google.com/forms/d/e/1FAIpQLSffxZ8i68wYTKzGI1d47koDxVT
 
 # .appsMaterialWizToggleRadiogroupEl.exportToggleEl
 
-emailAddressInput = WebDriverWait(browser, 60).until(EC.visibility_of_element_located((By.CSS_SELECTOR,
-                                                                                       ".quantumWizTextinputPaperinputInput.exportInput")))
+emailAddressInput = WebDriverWait(browser, 60).until(EC.visibility_of_element_located(
+    (By.CSS_SELECTOR, "div:nth-child(2) > div > div > div > input.quantumWizTextinputPaperinputInput.exportInput")))
+
+
+nameInput = WebDriverWait(browser, 60).until(EC.visibility_of_element_located(
+    (By.CSS_SELECTOR, "div:nth-child(3) > div > div > div.freebirdFormviewerComponentsQuestionTextRoot > div > div > div > div > input.quantumWizTextinputPaperinputInput.exportInput")))
+
+membershipNumberInput = WebDriverWait(browser, 60).until(EC.visibility_of_element_located(
+    (By.CSS_SELECTOR, "div:nth-child(4) > div > div > div.freebirdFormviewerComponentsQuestionTextRoot > div > div > div > div > input.quantumWizTextinputPaperinputInput.exportInput")))
 
 # .appsMaterialWizButtonEl.appsMaterialWizButtonPaperbuttonEl.appsMaterialWizButtonPaperbuttonProtected.freebirdFormviewerViewNavigationNoSubmitButton.freebirdThemedProtectedButtonM2
 
@@ -92,6 +97,9 @@ emailAddressInput = WebDriverWait(browser, 60).until(EC.visibility_of_element_lo
 # a.click()
 # b.click()
 emailAddressInput.send_keys("u3555304@connect.hku.hk")
+nameInput.send_keys("Ritvik Singh")
+membershipNumberInput.send_keys("3035553044")
+# nameInput.send_keys("Ritvik Singh")
 
 print(" ========= OPTION 1 ========= ")
 print(emailAddressInput)
