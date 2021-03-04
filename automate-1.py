@@ -13,7 +13,7 @@ import time
 browser = webdriver.Chrome(
     executable_path='/usr/local/bin/chromedriver')
 
-browser.get('https://forms.gle/4g5ceVZvDjdpD1r27')
+browser.get('https://docs.google.com/forms/d/e/1FAIpQLSffxZ8i68wYTKzGI1d47koDxVTPu-Qg5S6TZJQn10QW4s9LFQ/viewform?gxids=7628')
 
 # textboxes = browser.find_elements_by_class_name(
 #     "quantumWizTextinputPaperinputInput")
@@ -57,13 +57,14 @@ browser.get('https://forms.gle/4g5ceVZvDjdpD1r27')
 
 # .appsMaterialWizToggleRadiogroupEl.exportToggleEl
 
-question1option1 = WebDriverWait(browser, 60).until(EC.visibility_of_element_located((By.CSS_SELECTOR,
-                                                                                      ".appsMaterialWizToggleRadiogroupRadioButtonContainer")))
+emailAddressInput = WebDriverWait(browser, 60).until(EC.visibility_of_element_located((By.CSS_SELECTOR,
+                                                                                       ".quantumWizTextinputPaperinputInput.exportInput")))
 
 # .appsMaterialWizButtonEl.appsMaterialWizButtonPaperbuttonEl.appsMaterialWizButtonPaperbuttonProtected.freebirdFormviewerViewNavigationNoSubmitButton.freebirdThemedProtectedButtonM2
 
-nextToPage2 = WebDriverWait(browser, 60).until(EC.visibility_of_element_located((By.CSS_SELECTOR,
-                                                                                 ".appsMaterialWizButtonEl.appsMaterialWizButtonPaperbuttonEl/appsMaterialWizButtonPaperbuttonProtected.freebirdFormviewerViewNavigationNoSubmitButton.freebirdThemedProtectedButtonM2")))
+
+# b = WebDriverWait(browser, 60).until(EC.visibility_of_element_located(
+#     (By.CSS_SELECTOR, ".appsMaterialWizButtonEl.appsMaterialWizButtonPaperbuttonEl.appsMaterialWizButtonPaperbuttonProtected.freebirdFormviewerViewNavigationNoSubmitButton.freebirdThemedProtectedButtonM2")))
 
 # textarea = WebDriverWait(browser, 60).until(EC.visibility_of_element_located((By.CSS_SELECTOR,
 #                                                                               ".quantumWizTextinputPapertextareaInput.exportTextarea")))
@@ -81,17 +82,22 @@ nextToPage2 = WebDriverWait(browser, 60).until(EC.visibility_of_element_located(
 # print(WebDriverWait(browser, 20).until(EC.visibility_of_element_located((By.CSS_SELECTOR,
 #                                                                          ".docssharedWizToggleLabeledLabelText.exportLabel.freebirdFormviewerComponentsQuestionRadioLabel"))))
 
-question1option1[0].click()
+# question1option.click()
+
 
 # textarea.send_keys(""+localtime)
 
 # nextToPage2.click()
 
+# a.click()
+# b.click()
+emailAddressInput.send_keys("u3555304@connect.hku.hk")
+
 print(" ========= OPTION 1 ========= ")
-print(question1option1)
+print(emailAddressInput)
 print(" ============================ ")
 print(" ========= NEXT PG2 ========= ")
-print(nextToPage2)
+# print(b)
 print(" ============================ ")
 # print(" ========== SUBMIT ========== ")
 # print(submit)
