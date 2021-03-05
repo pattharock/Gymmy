@@ -20,6 +20,6 @@ Add the following data
 Following this, head over to the terminal and run the command `crontab -e` to add the script to your cronjobs.
 1. add the time-scheduler (see https://crontab.guru)
 2. add the location of your python install (virtual environment)
-3. add the location of scipt
+3. add the location of script `makeBoooking.py` as on your device 
 
 You're all set. 
