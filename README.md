@@ -1,6 +1,6 @@
 # Gymmy
 
-A selenium script to automate the slot-booking process for gyms @HKU.
+A selenium application to automate the slot-booking process for gyms @HKU.
 
 ## Running locally
 Clone the repository, then add a config file `config.py` in the repo.
