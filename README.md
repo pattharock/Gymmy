@@ -1,3 +1,4 @@
+# Gymmy
 
 A selenium script to automate the slot-booking process for gyms @HKU.
 
