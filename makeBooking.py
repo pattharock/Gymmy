@@ -10,13 +10,14 @@ from config import *
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("-incognito")
-chrome_options.add_argument(f"user-data-dir=C:/Users/{EMAIL}/AppData/Local/Google/Chrome/User Data/Default")
-chrome_options.add_argument(
-    '--user-agent="Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; Microsoft; Lumia 640 XL LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Mobile Safari/537.36 Edge/12.10166"')
+# chrome_options.add_argument(
+#     f"user-data-dir=C:/Users/{EMAIL}/AppData/Local/Google/Chrome/User Data/Default")
+# chrome_options.add_argument(
+#     '--user-agent="Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; Microsoft; Lumia 640 XL LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Mobile Safari/537.36 Edge/12.10166"')
 
 browser = webdriver.Chrome(
     executable_path='/usr/local/bin/chromedriver')
-browser.maximize_window()
+# browser.maximize_window()
 
 browser.get('https://docs.google.com/forms/d/e/1FAIpQLSffxZ8i68wYTKzGI1d47koDxVTPu-Qg5S6TZJQn10QW4s9LFQ/viewform?gxids=7628')
 actions = ActionChains(browser)
@@ -61,7 +62,9 @@ nextToPage3.click()
 
 timeSlotDropDown = WebDriverWait(browser, 60).until(EC.visibility_of_element_located(
     (By.CSS_SELECTOR, "div.quantumWizMenuPaperselectOption.appsMaterialWizMenuPaperselectOption.freebirdThemedSelectOptionDarkerDisabled.exportOption.isSelected.isPlaceholder")))
+
 timeSlotDropDown.click()
+
 dropDownMenu = WebDriverWait(browser, 60).until(EC.visibility_of_element_located(
     (By.CSS_SELECTOR, "div.exportSelectPopup.quantumWizMenuPaperselectPopup.appsMaterialWizMenuPaperselectPopup")))
 
@@ -122,4 +125,4 @@ submitForm = WebDriverWait(browser, 60).until(EC.visibility_of_element_located(
     (By.CSS_SELECTOR, "div.appsMaterialWizButtonEl.appsMaterialWizButtonPaperbuttonEl.appsMaterialWizButtonPaperbuttonFilled.freebirdFormviewerViewNavigationSubmitButton.freebirdThemedFilledButtonM2 > span > span.appsMaterialWizButtonPaperbuttonLabel.quantumWizButtonPaperbuttonLabel.exportLabel")))
 submitForm.click()
 
-browser.quit()
+# browser.quit()
